@@ -16,6 +16,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             overflow-x: hidden;
+            color: #fff;
         }
 
         /* Efectos de partículas animadas */
@@ -184,8 +185,8 @@
             background: linear-gradient(45deg, #4ecdc4, #ff6b6b);
         }
 
-        /* Sección de características */
-        .features {
+        /* Secciones Generales */
+        .section {
             padding: 100px 20px;
             max-width: 1200px;
             margin: 0 auto;
@@ -193,15 +194,19 @@
             z-index: 10;
         }
 
-        .features h2 {
+        .section-title {
             text-align: center;
             font-size: 3rem;
             color: white;
             margin-bottom: 60px;
-            background: linear-gradient(45deg, #fff, #ff6b6b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        /* Sección de Características */
+        .features .section-title {
+            background: linear-gradient(45deg, #fff, #ff6b6b);
         }
 
         .feature-grid {
@@ -273,24 +278,41 @@
             line-height: 1.6;
         }
 
-        /* Galería de imágenes */
-        .gallery {
-            padding: 100px 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 10;
+        /* Sección de Servicios */
+        .services .section-title {
+            background: linear-gradient(45deg, #fff, #45b7d1);
         }
 
-        .gallery h2 {
-            text-align: center;
+        .service-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .service-icon {
             font-size: 3rem;
-            color: white;
-            margin-bottom: 60px;
-            background: linear-gradient(45deg, #fff, #4ecdc4);
+            color: #4ecdc4;
+            flex-shrink: 0;
+        }
+        
+        .service-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
+        }
+        
+        .service-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        /* Galería de imágenes */
+        .gallery .section-title {
+            background: linear-gradient(45deg, #fff, #4ecdc4);
         }
 
         .image-grid {
@@ -339,6 +361,105 @@
             transform: translateY(0);
         }
 
+        /* Sección de Testimonios */
+        .testimonials .section-title {
+            background: linear-gradient(45deg, #fff, #ff6b6b);
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #4ecdc4;
+        }
+        
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        
+        .author-info span {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Sección de Contacto */
+        .contact .section-title {
+            background: linear-gradient(45deg, #fff, #45b7d1);
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #ff6b6b;
+            box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+        }
+        
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .contact-form button {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
         /* Footer */
         .footer {
             background: rgba(0, 0, 0, 0.3);
@@ -349,12 +470,12 @@
             position: relative;
             z-index: 10;
         }
-
+        
         /* Efectos de scroll */
         .scroll-reveal {
             opacity: 0;
             transform: translateY(50px);
-            transition: all 0.6s ease;
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         .scroll-reveal.revealed {
@@ -367,11 +488,11 @@
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.2rem; }
             .nav-menu { display: none; }
-            .features h2, .gallery h2 { font-size: 2rem; }
+            .section-title { font-size: 2rem; }
             .feature-grid, .image-grid { grid-template-columns: 1fr; }
+            .service-item { flex-direction: column; text-align: center; }
         }
-
-        /* Efectos adicionales */
+        
         .glow-effect {
             animation: glow 2s ease-in-out infinite alternate;
         }
@@ -383,10 +504,8 @@
     </style>
 </head>
 <body>
-    <!-- Partículas animadas -->
     <div class="particles" id="particles"></div>
 
-    <!-- Header -->
     <header class="header" id="header">
         <div class="nav-container">
             <div class="logo">Decorastyle</div>
@@ -394,25 +513,25 @@
                 <ul class="nav-menu">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#caracteristicas">Características</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h1>Decorastyle Moderno</h1>
-            <p>Diseño innovador con efectos visuales impresionantes</p>
-            <a href="#caracteristicas" class="cta-button glow-effect">Explorar</a>
+            <p>Diseño de interiores innovador con efectos visuales impresionantes</p>
+            <a href="#servicios" class="cta-button glow-effect">Explorar Servicios</a>
         </div>
     </section>
 
-    <!-- Características -->
-    <section class="features scroll-reveal" id="caracteristicas">
-        <h2>Características Destacadas</h2>
+    <section class="features section scroll-reveal" id="caracteristicas">
+        <h2 class="section-title">Características Destacadas</h2>
         <div class="feature-grid">
             <div class="feature-card">
                 <div class="feature-icon">✨</div>
@@ -432,57 +551,128 @@
         </div>
     </section>
 
-    <!-- Galería -->
-    <section class="gallery scroll-reveal" id="galeria">
-        <h2>Galería de Imágenes</h2>
-        <div class="image-grid">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Arquitectura moderna">
-                <div class="gallery-overlay">
-                    <h3>Arquitectura Moderna</h3>
-                    <p>Diseño contemporáneo con líneas limpias</p>
+    <section class="services section scroll-reveal" id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <div class="service-icon">🛋️</div>
+                <div class="service-content">
+                    <h3>Diseño de Interiores Residencial</h3>
+                    <p>Creamos espacios habitacionales que reflejan tu personalidad, combinando estética y funcionalidad para tu hogar.</p>
                 </div>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Interior minimalista">
-                <div class="gallery-overlay">
-                    <h3>Interior Minimalista</h3>
-                    <p>Espacios elegantes y funcionales</p>
+            <div class="service-item">
+                <div class="service-icon">🏢</div>
+                <div class="service-content">
+                    <h3>Diseño de Oficinas y Espacios Comerciales</h3>
+                    <p>Transformamos entornos de trabajo en lugares productivos y atractivos. Desde startups hasta grandes corporaciones.</p>
                 </div>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Decoración contemporánea">
-                <div class="gallery-overlay">
-                    <h3>Decoración Contemporánea</h3>
-                    <p>Elementos únicos y sofisticados</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sala de estar moderna">
-                <div class="gallery-overlay">
-                    <h3>Sala Moderna</h3>
-                    <p>Confort y estilo en perfecta armonía</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cocina elegante">
-                <div class="gallery-overlay">
-                    <h3>Cocina Elegante</h3>
-                    <p>Funcionalidad y belleza combinadas</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dormitorio minimalista">
-                <div class="gallery-overlay">
-                    <h3>Dormitorio Minimalista</h3>
-                    <p>Espacio de descanso perfecto</p>
+            <div class="service-item">
+                <div class="service-icon">🌿</div>
+                <div class="service-content">
+                    <h3>Decoración y Estilismo</h3>
+                    <p>Asesoramos en la selección de muebles, iluminación, textiles y arte para complementar y elevar cualquier espacio.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer" id="contacto">
+    <section class="gallery section scroll-reveal" id="galeria">
+        <h2 class="section-title">Galería de Proyectos</h2>
+        <div class="image-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1556912173-34e857406a4b?q=80&w=870&auto=format&fit=crop" alt="Arquitectura moderna">
+                <div class="gallery-overlay">
+                    <h3>Cocina de Lujo</h3>
+                    <p>Diseño contemporáneo con acabados de alta calidad</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop" alt="Interior minimalista">
+                <div class="gallery-overlay">
+                    <h3>Loft Industrial</h3>
+                    <p>Espacios abiertos y funcionales con un toque urbano</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=870&auto=format&fit=crop" alt="Decoración contemporánea">
+                <div class="gallery-overlay">
+                    <h3>Sala de Estar Minimalista</h3>
+                    <p>Elementos únicos y sofisticados en perfecta armonía</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=870&auto=format&fit=crop" alt="Sala de estar moderna">
+                <div class="gallery-overlay">
+                    <h3>Oficina Innovadora</h3>
+                    <p>Un entorno de trabajo que inspira creatividad</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1595565551322-9214d025b6a7?q=80&w=870&auto=format&fit=crop" alt="Cocina elegante">
+                <div class="gallery-overlay">
+                    <h3>Dormitorio Principal</h3>
+                    <p>Un santuario de tranquilidad con diseño nórdico</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=870&auto=format&fit=crop" alt="Dormitorio minimalista">
+                <div class="gallery-overlay">
+                    <h3>Baño con Estilo</h3>
+                    <p>Funcionalidad y elegancia en cada detalle</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials section scroll-reveal" id="testimonios">
+        <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"¡El equipo de Decorastyle transformó por completo mi hogar! El diseño es moderno, elegante y funcional. Superaron todas mis expectativas. ¡Totalmente recomendado!"</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar de Cliente" class="author-avatar">
+                    <div class="author-info">
+                        <h4>Ana García</h4>
+                        <span>Madrid, España</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>"Necesitábamos un rediseño de nuestra oficina que inspirara a nuestro equipo. Decorastyle lo hizo posible con un proyecto innovador que mejoró la productividad y el ambiente de trabajo."</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar de Cliente" class="author-avatar">
+                    <div class="author-info">
+                        <h4>Carlos Pérez</h4>
+                        <span>Barcelona, España</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>"La atención al detalle y la creatividad de Decorastyle son inigualables. Lograron capturar exactamente lo que tenía en mente para mi estudio. ¡Estoy encantada con el resultado!"</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Avatar de Cliente" class="author-avatar">
+                    <div class="author-info">
+                        <h4>Marta López</h4>
+                        <span>Valencia, España</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact section scroll-reveal" id="contacto">
+        <h2 class="section-title">Contáctanos</h2>
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Tu Nombre" required>
+            <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
+            <textarea name="message" rows="6" placeholder="Tu Mensaje" required></textarea>
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <footer class="footer">
         <p>&copy; 2024 Decorastyle. Todos los derechos reservados.</p>
         <p>Diseño moderno con efectos visuales impresionantes</p>
     </footer>
@@ -556,7 +746,7 @@
                 scrollReveal();
             });
             
-            // Inicializar scroll reveal
+            // Inicializar scroll reveal al cargar
             scrollReveal();
         });
 
